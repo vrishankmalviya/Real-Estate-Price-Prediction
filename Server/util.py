@@ -11,20 +11,23 @@ __model=None
 def price(location,total_sqft,bath, balcony, bhk):
     
      loc_index = np.where(X.columns==location)[0][0]
+     
 
-    x = np.zeros(len(X.columns))
-    x[0] = sqft
-    x[1] = bath
-    x[2] = bhk
-    x[3] =balcony
-    if loc_index >= 0:
+     x = np.zeros(len(__data_columns))
+     x[0] = sqft
+     x[1] = bath
+     x[2] = bhk
+     x[3] =balcony
+     if loc_index >= 0:
         x[loc_index] = 1
     
-    try:
+     try:
         loc_index = __data_columns.index(location.lower())
-    except:
+     except:
         loc_index = -1
-    return __model.predict([x])
+    
+    
+     return round  (__model.predict([x])[0],2)
     
 
 
@@ -35,7 +38,7 @@ def load():
     print("loading saved artifacts...start")
     global __data_columns
     global __location
-    #global __model
+    global __model
     
     
     
