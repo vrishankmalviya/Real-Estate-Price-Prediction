@@ -8,23 +8,23 @@ __data_columns=None
 __model=None
 
 
-def price(location,total_sqft,bath, balcony, bhk):
+def price(location,total_sqft,bath,bhk , balcony):
     
-     loc_index = np.where(X.columns==location)[0][0]
+     try:
+        loc_index = __data_columns.index(location.lower())
+     except:
+        loc_index = -1
      
 
      x = np.zeros(len(__data_columns))
-     x[0] = sqft
+     x[0] = total_sqft
      x[1] = bath
      x[2] = bhk
      x[3] =balcony
      if loc_index >= 0:
         x[loc_index] = 1
     
-     try:
-        loc_index = __data_columns.index(location.lower())
-     except:
-        loc_index = -1
+    
     
     
      return round  (__model.predict([x])[0],2)
@@ -55,3 +55,7 @@ def load():
 if __name__ == '__main__':
     load()
     print(get_location())
+    print(price('1st Phase JP Nagar',1000, 3, 3,2))
+    print(price('1st Phase JP Nagar', 1000, 2, 2,1))
+    print(price('Kalhalli', 1000, 2, 2,2)) # other location
+    print(price('Ejipura', 1000, 2, 2,1))  # other location
