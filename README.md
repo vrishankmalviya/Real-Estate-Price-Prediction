@@ -24,13 +24,20 @@ This project utilizes the following technologies and tools:
 **Project Structure:-**
 
 Data Loading and Cleaning: Load and Clean the data to prepare it for model building.
+
 Exploratory Data Analysis (EDA): Visualizing data using Python Libraries to understand patterns and relationships between the data.
+
 Model Building: Constructing a predictive model using models and library Scikit-learn, including hyperparameter tuning.
+
 Saving the Model: Saving the trained model to use it in future.
+
 Flask Server Development: Developing a Python Flask server to serve HTTP requests and predict prices.
+
 Website Development: Creating a simple website using HTML, CSS, and JavaScript to showcase the predictive model.
   
 
 
 
 
+**Contributors**
+Vrishank Malviya - Project Lead & Developer
