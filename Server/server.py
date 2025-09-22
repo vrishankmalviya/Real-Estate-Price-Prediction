@@ -13,7 +13,7 @@ def get_location():
     return response        
 
 
-@app.route('/predict_home_price', methods=['Get'])
+@app.route('/predict_home_price', methods=['GET'])
 def predict_home_price():
     
     total_sqft = int(request.form['total_sqft'])
