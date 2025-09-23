@@ -1,3 +1,3 @@
 
 
-web: gunicorn F:\Resume project\Price prediction\Server\server:app
+web: gunicorn --chdir Server\server:app
