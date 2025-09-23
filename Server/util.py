@@ -8,6 +8,8 @@ __data_columns=None
 __model=None
 
 
+
+
 def price(location,total_sqft,bath,bhk , balcony):
     
      try:
@@ -42,12 +44,12 @@ def load():
     
     
     
-    with open("Server/artifacts/columns.json",'r')as f:
+    with open("artifacts/columns.json",'r')as f:
        __data_columns= json.load(f)['data_columns']
        __location = __data_columns[4:] 
        
        
-    with open("Server/artifacts/Real_Estate_model.pickle",'rb') as f:
+    with open("artifacts/Real_Estate_model.pickle",'rb') as f:
         __model = pickle.load(f)
     print("Data columns loaded successfully.")
     
