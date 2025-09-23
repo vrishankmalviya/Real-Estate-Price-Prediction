@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
-from Server import util
-from Server.util import price
+import util
+from util import price
 app= Flask(__name__)
 
 @app.route('/get_location', methods = ['GET'])
