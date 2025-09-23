@@ -3,9 +3,8 @@ import util
 from util import price
 app= Flask(__name__)
 
-@app.before_first_request
-def load_artifacts():
-    util.load()
+
+util.load()
 
 
 @app.route('/get_location', methods = ['GET'])
