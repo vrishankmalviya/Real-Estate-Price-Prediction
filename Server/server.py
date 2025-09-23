@@ -3,6 +3,11 @@ import util
 from util import price
 app= Flask(__name__)
 
+@app.before_first_request
+def load_artifacts():
+    util.load()
+
+
 @app.route('/get_location', methods = ['GET'])
 def get_location():
     
@@ -13,7 +18,7 @@ def get_location():
     return response        
 
 
-@app.route('/predict_home_price', methods=['GET'])
+@app.route('/predict_home_price', methods=['POST'])
 def predict_home_price():
     
     total_sqft = int(request.form['total_sqft'])
